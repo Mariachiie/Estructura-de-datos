@@ -1,0 +1,7 @@
+20:21:25 **** Rebuild of configuration Debug for project Polinomios ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o polinomios.o "..\\polinomios.c" 
+gcc -o Polinomios.exe polinomios.o 
+
+20:21:30 Build Finished (took 4s.301ms)
+

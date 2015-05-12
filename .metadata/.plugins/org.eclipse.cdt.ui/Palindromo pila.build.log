@@ -1,0 +1,11 @@
+08:10:14 **** Incremental Build of configuration Debug for project Palindromo pila ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o palindromopila.o "..\\palindromopila.c" 
+..\palindromopila.c: In function 'main':
+..\palindromopila.c:31:8: warning: unused variable 'stack' [-Wunused-variable]
+  PILA *stack = NULL;
+        ^
+gcc -o "Palindromo pila.exe" palindromopila.o 
+
+08:10:17 Build Finished (took 3s.572ms)
+

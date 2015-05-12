@@ -1,0 +1,104 @@
+/*
+ * ajedrez.c
+ *
+ *  Created on: 11/05/2015
+ *      Author: Toshiba
+ */
+
+#include<stdio.h>
+#define TAM 8
+
+int tablero[8][8] = { { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 } };
+
+void llenarAtaque(int i, int j, int num) {
+
+	int fila;
+	for (fila = 0; fila < TAM; fila++) {
+		if (tablero[fila][j] == 0)
+			tablero[fila][j] = num;
+	}
+
+	int columna;
+	for (columna = 0; columna < TAM; columna++) {
+		if (tablero[i][columna] == 0)
+			tablero[i][columna] = num;
+	}
+
+	fila = i, columna = j;
+	while (fila >= 0 && columna >= 0) {
+		if (tablero[fila][columna] == 0)
+			tablero[fila][columna] = num;
+		fila--, columna--;
+	}
+
+	fila = i, columna = j;
+	while (fila >= 0 && columna < TAM) {
+		if (tablero[fila][columna] == 0)
+			tablero[fila][columna] = num;
+		fila--, columna++;
+	}
+
+	fila = i, columna = j;
+	while (fila < TAM && columna >= 0) {
+		if (tablero[fila][columna] == 0)
+			tablero[fila][columna] = num;
+		fila++, columna--;
+	}
+
+	fila = i, columna = j;
+	while (fila < TAM && columna < TAM) {
+		if (tablero[fila][columna] == 0)
+			tablero[fila][columna] = num;
+		fila++, columna++;
+	}
+
+}
+
+void limpiarAtaque(int num) {
+	int i, j;
+	for (i = 0; i < TAM; i++) {
+		for (j = 0; j < TAM; j++) {
+			if (tablero[i][j] == num)
+				tablero[i][j] = 0;
+		}
+	}
+}
+
+void imprimir() {
+	int i, j;
+	for (i = 0; i < TAM; i++) {
+		for (j = 0; j < TAM; j++) {
+			printf("%d\t", tablero[i][j]);
+		}
+		printf("\n");
+	}
+	printf("************************************************************\n");
+}
+
+int colocarReina(int reina) {
+	if (reina == 9) {
+		imprimir();
+		return 1;
+	} else {
+		int i, j;
+		for (i = 0; i < TAM; i++) {
+			for (j = 0; j < TAM; j++) {
+				if (tablero[i][j] == 0) {
+					tablero[i][j] = reina;
+					llenarAtaque(i, j, reina);
+					colocarReina(reina + 1);
+					limpiarAtaque(reina);
+				}
+			}
+		}
+		return 0;
+	}
+}
+
+int main() {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	colocarReina(1);
+
+	return 1;
+}
+

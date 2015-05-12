@@ -1,0 +1,17 @@
+08:19:14 **** Incremental Build of configuration Debug for project NotaciónPosFija ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o psfija.o "..\\psfija.c" 
+..\psfija.c: In function 'main':
+..\psfija.c:47:17: warning: passing argument 1 of 'popQ' from incompatible pointer type [enabled by default]
+                 basurero = popQ(&operadores);
+                 ^
+In file included from ..\psfija.c:10:0:
+..\colas.h:46:10: note: expected 'struct COLA **' but argument is of type 'struct PILA **'
+ ELEMENTO popQ(COLA **queue) {
+          ^
+..\psfija.c:47:26: error: incompatible types when assigning to type 'char[100]' from type 'int'
+                 basurero = popQ(&operadores);
+                          ^
+..\psfija.c:25:10: warning: variable 'basurero' set but not used [-Wunused-but-set-variable]
+     char basurero[100];
+          ^

@@ -1,0 +1,7 @@
+20:10:40 **** Incremental Build of configuration Debug for project Ajedrez ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o ajedrez.o "..\\ajedrez.c" 
+gcc -o Ajedrez.exe ajedrez.o 
+
+20:10:44 Build Finished (took 3s.908ms)
+

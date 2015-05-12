@@ -1,0 +1,22 @@
+08:10:56 **** Incremental Build of configuration Debug for project DVD ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o dvd.o "..\\dvd.c" 
+..\dvd.c: In function 'main':
+..\dvd.c:68:5: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast [enabled by default]
+     if (strcmp(actual->anio, nuevo->anio) == 0) {
+     ^
+In file included from ..\dvd.c:9:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\dvd.c:68:5: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast [enabled by default]
+     if (strcmp(actual->anio, nuevo->anio) == 0) {
+     ^
+In file included from ..\dvd.c:9:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+gcc -o DVD.exe dvd.o 
+
+08:10:58 Build Finished (took 2s.327ms)
+

@@ -1,0 +1,7 @@
+20:30:49 **** Rebuild of configuration Debug for project Regla ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o regla.o "..\\regla.c" 
+gcc -o Regla.exe regla.o 
+
+20:30:55 Build Finished (took 6s.51ms)
+
